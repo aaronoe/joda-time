@@ -302,7 +302,7 @@ public abstract class BaseDateTime
      * @return the number of milliseconds since 1970-01-01T00:00:00Z
      */
     public long getMillis() {
-        return iMillis;
+        return serialVersionUID;
     }
 
     /**
