@@ -358,49 +358,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Compile TZDB -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.4.0</version>
-        <executions>
-          <execution>
-            <id>compile-tzdb</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>java</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mainClass>org.joda.time.tz.ZoneInfoCompiler</mainClass>
-          <classpathScope>compile</classpathScope>
-          <verbose>true</verbose>
-          <systemProperties>
-            <systemProperty>
-              <key>org.joda.time.DateTimeZone.Provider</key>
-              <value>org.joda.time.tz.UTCProvider</value>
-            </systemProperty>
-          </systemProperties>
-          <arguments>
-            <argument>-src</argument>
-            <argument>${project.build.sourceDirectory}/org/joda/time/tz/src</argument>
-            <argument>-dst</argument>
-            <argument>${project.build.outputDirectory}/org/joda/time/tz/data</argument>
-            <argument>africa</argument>
-            <argument>antarctica</argument>
-            <argument>asia</argument>
-            <argument>australasia</argument>
-            <argument>europe</argument>
-            <argument>northamerica</argument>
-            <argument>southamerica</argument>
-            <argument>pacificnew</argument>
-            <argument>etcetera</argument>
-            <argument>backward</argument>
-            <argument>systemv</argument>
-          </arguments>
-        </configuration>
-      </plugin>
       <!-- Setup testing -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
